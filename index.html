@@ -115,6 +115,53 @@ nav.scrolled {
 .page.active { display: block; }
 
 /* ═══════════════════════════════════════════════
+   MOBILE RESPONSIVENESS
+═══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* 1. Global Spacing Adjustments */
+  nav, .hero-inner, .section-pillars, .section-sectors, 
+  .section-why, .section-partners, footer, .portfolio-grid {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* 2. Navigation */
+  .nav-links { display: none; } /* Standard practice: hide desktop links or use a burger menu */
+  nav { padding: 1rem 1.5rem; }
+
+  /* 3. Hero Section */
+  .hero-inner {
+    grid-template-columns: 1fr; /* Stack the columns */
+    text-align: center;
+    gap: 3rem;
+  }
+  .hero-subtitle { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-stats { grid-template-columns: 1fr; gap: 1rem; }
+  
+  /* Hide the decorative stack on mobile to save space, or center it */
+  .hero-right { display: none; } 
+
+  /* 4. Grid Adjustments */
+  .section-header, .pillars-grid, .sectors-grid, 
+  .why-grid, .why-right, .footer-grid, .portfolio-companies {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .cta-banner {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  /* 5. Typography */
+  h1.hero-title { font-size: 2.5rem; }
+  .section-header h2 { font-size: 1.8rem; }
+}
+
+/* ═══════════════════════════════════════════════
    SHARED COMPONENTS
 ═══════════════════════════════════════════════ */
 .pill {
