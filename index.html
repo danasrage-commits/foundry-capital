@@ -160,65 +160,74 @@ nav.scrolled {
   h1.hero-title { font-size: 2.5rem; }
   .section-header h2 { font-size: 1.8rem; }
 }
+/* ═══════════════════════════════════════════════
+   COMPLETE MOBILE & LAYOUT OVERRIDE
+═══════════════════════════════════════════════ */
+
 @media (max-width: 768px) {
-  /* --- HEADER / NAV FIX --- */
+  /* Fix the Header visibility */
   nav {
-    padding: 1rem 1.5rem !important;
-    flex-direction: row; /* Keep logo and button side-by-side */
-    justify-content: space-between;
+    padding: 0.75rem 1rem !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
   }
+
+  .nav-links { display: none !important; } /* Hides desktop links */
   
-  .nav-links {
-    display: none; /* Hides menu links on mobile to prevent overlap */
+  .nav-logo-mark { width: 30px; height: 30px; font-size: 0.7rem; }
+  .nav-logo-text { font-size: 0.85rem; }
+
+  /* Apply to ALL pages in the SPA */
+  .page {
+    padding-top: 70px !important; /* Prevents header from covering content */
+    width: 100vw !important;
+    overflow-x: hidden;
   }
 
-  .nav-logo-text {
-    font-size: 0.9rem; /* Smaller text so it fits */
+  /* Force every container to be full width */
+  .hero-inner, .section-pillars, .section-sectors, 
+  .section-why, .section-mission-inner, .how-process, 
+  .how-timeline-inner, .portfolio-grid, .footer-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    gap: 2rem !important;
   }
 
-  /* --- FOOTER FIX --- */
+  /* Specific Fixes for "About" and "How it Works" pages */
+  .page-hero, .why-grid, .mission-grid, .values-grid, .step-details {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .page-hero-right { margin-top: 2rem; }
+
+  /* Footer Visibility Fix */
   footer {
     padding: 3rem 1.5rem !important;
+    display: block !important;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr !important; /* Stack columns vertically */
-    gap: 2.5rem !important;
-    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
   }
 
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-brand p {
-    max-width: 100%;
-    margin: 1rem auto;
+  .footer-col {
+    margin-bottom: 2rem;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 1rem;
-    text-align: center;
-    padding-bottom: 2rem;
-  }
-
-  /* --- SECTION OVERRIDES --- */
-  .section-header {
-    grid-template-columns: 1fr !important;
-    text-align: left;
-    gap: 1rem;
-  }
-
-  /* Ensure the main container doesn't overflow */
-  .hero-inner, .section-pillars, .section-sectors, .section-why, .cta-banner {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 4rem 1.5rem !important;
   }
 }
+
    
 /* ═══════════════════════════════════════════════
    SHARED COMPONENTS
