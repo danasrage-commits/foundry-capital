@@ -160,7 +160,66 @@ nav.scrolled {
   h1.hero-title { font-size: 2.5rem; }
   .section-header h2 { font-size: 1.8rem; }
 }
+@media (max-width: 768px) {
+  /* --- HEADER / NAV FIX --- */
+  nav {
+    padding: 1rem 1.5rem !important;
+    flex-direction: row; /* Keep logo and button side-by-side */
+    justify-content: space-between;
+  }
+  
+  .nav-links {
+    display: none; /* Hides menu links on mobile to prevent overlap */
+  }
 
+  .nav-logo-text {
+    font-size: 0.9rem; /* Smaller text so it fits */
+  }
+
+  /* --- FOOTER FIX --- */
+  footer {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important; /* Stack columns vertically */
+    gap: 2.5rem !important;
+    text-align: center;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  /* --- SECTION OVERRIDES --- */
+  .section-header {
+    grid-template-columns: 1fr !important;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  /* Ensure the main container doesn't overflow */
+  .hero-inner, .section-pillars, .section-sectors, .section-why, .cta-banner {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 4rem 1.5rem !important;
+  }
+}
+   
 /* ═══════════════════════════════════════════════
    SHARED COMPONENTS
 ═══════════════════════════════════════════════ */
